@@ -1,0 +1,260 @@
+/* =========================================================
+   ANIMATIONS  ·  Punith Gowda G Portfolio
+   All keyframes + scroll-reveal + micro-interaction
+   ========================================================= */
+
+/* ---- Core keyframes ---- */
+@keyframes blink {
+  0%, 50%   { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(8px); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes floatParticle {
+  0%   { transform: translateY(0) translateX(0);    opacity: 0.5; }
+  50%  { transform: translateY(-40px) translateX(10px); opacity: 0.9; }
+  100% { transform: translateY(0) translateX(0);    opacity: 0.5; }
+}
+
+/* ---- 3D float: hero photo ring & frame ---- */
+@keyframes hero3DFloat {
+  0%, 100% { transform: translateY(0) rotateX(0deg) rotateY(0deg); }
+  25%      { transform: translateY(-8px) rotateX(3deg) rotateY(-3deg); }
+  50%      { transform: translateY(-14px) rotateX(0deg) rotateY(4deg); }
+  75%      { transform: translateY(-6px) rotateX(-2deg) rotateY(-2deg); }
+}
+
+@keyframes ringPulse {
+  0%, 100% { box-shadow: 0 0 0 8px var(--teal-dim), 0 0 0 16px rgba(86,224,198,0.05), 0 20px 40px -10px rgba(0,0,0,0.5); }
+  50%      { box-shadow: 0 0 0 14px var(--teal-dim), 0 0 0 28px rgba(86,224,198,0.12), 0 30px 60px -10px rgba(86,224,198,0.25); }
+}
+
+/* ---- Signal strip pulse ---- */
+@keyframes signalPulse {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.7; }
+}
+
+/* ---- Section glow sweep (triggers when section enters view) ---- */
+@keyframes sectionGlow {
+  from { opacity: 0; transform: scaleX(0); }
+  to   { opacity: 1; transform: scaleX(1); }
+}
+
+/* ---- Stat counter pop ---- */
+@keyframes statPop {
+  0%   { transform: scale(0.7); opacity: 0; }
+  70%  { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ---- Card shimmer on hover ---- */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ---- 3D tilt helper class (JS-driven via CSS var) ---- */
+.tilt-card {
+  transform: perspective(900px)
+             rotateX(var(--tilt-x, 0deg))
+             rotateY(var(--tilt-y, 0deg))
+             translateZ(0);
+  transition: transform 0.15s ease;
+  will-change: transform;
+}
+
+/* ---- Loading screen exit ---- */
+.loader { transition: opacity 0.6s ease, visibility 0.6s ease; }
+.loader.done { opacity: 0; visibility: hidden; }
+
+/* ---- Hero photo ring & 3D float animation ---- */
+.hero-photo {
+  perspective: 1000px;
+  animation: hero3DFloat 7s ease-in-out infinite;
+}
+.photo-frame {
+  animation: ringPulse 3.5s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+/* ---- Signal strip ---- */
+.signal-strip {
+  animation: signalPulse 2.8s ease-in-out infinite;
+}
+
+/* ---- Scroll reveal ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.75s cubic-bezier(.22,1,.36,1),
+              transform 0.75s cubic-bezier(.22,1,.36,1);
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger siblings inside a grid/flex container */
+.reveal:nth-child(2) { transition-delay: 0.07s; }
+.reveal:nth-child(3) { transition-delay: 0.14s; }
+.reveal:nth-child(4) { transition-delay: 0.21s; }
+.reveal:nth-child(5) { transition-delay: 0.28s; }
+.reveal:nth-child(6) { transition-delay: 0.35s; }
+.reveal:nth-child(7) { transition-delay: 0.42s; }
+
+/* ---- Section heading accent line ---- */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -6px;
+  height: 2px; width: 0;
+  background: linear-gradient(90deg, var(--teal), var(--amber));
+  border-radius: 2px;
+  transform-origin: left center;
+  transition: width 0.8s cubic-bezier(.22,1,.36,1) 0.2s;
+}
+.section-title.in-view::after { width: 100%; }
+
+/* ---- Particle dots (hero section) ---- */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--teal);
+  opacity: 0.5;
+  animation: floatParticle 8s ease-in-out infinite;
+}
+
+/* ---- Skill bar fill ---- */
+.fill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--teal), var(--amber));
+  border-radius: 3px;
+  transition: width 1.4s cubic-bezier(.22,1,.36,1);
+}
+
+/* ---- Stat card counter pop ---- */
+.stat-card.in-view .stat-number {
+  animation: statPop 0.5s cubic-bezier(.34,1.56,.64,1) forwards;
+}
+
+/* ---- Card hover shimmer ---- */
+.project-card::before,
+.skill-card::before,
+.cert-card::before,
+.exp-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(86,224,198,0.05) 50%,
+    transparent 80%
+  );
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.project-card,
+.skill-card,
+.cert-card,
+.exp-card {
+  position: relative;
+  overflow: hidden;
+}
+.project-card:hover::before,
+.skill-card:hover::before,
+.cert-card:hover::before,
+.exp-card:hover::before {
+  opacity: 1;
+  animation: shimmer 1.2s linear forwards;
+}
+
+/* ---- Timeline dot pulse ---- */
+.timeline-dot {
+  position: absolute;
+  left: -2.4rem; top: 6px;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 2px solid var(--teal);
+  transition: box-shadow 0.3s ease;
+}
+.timeline-item:hover .timeline-dot {
+  box-shadow: 0 0 0 6px var(--teal-dim);
+}
+
+/* ---- Stack icon 3D lift ---- */
+.stack-icons span {
+  transition: transform 0.2s ease, border-color 0.2s ease, color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+.stack-icons span:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 8px 20px -8px rgba(86,224,198,0.3);
+}
+
+/* ---- Hero title subtle gradient animation ---- */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+.highlight {
+  background: linear-gradient(90deg, var(--teal), var(--amber), var(--teal));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+/* ---- Navbar link active glow ---- */
+.nav-links a.active {
+  color: var(--teal) !important;
+}
+.nav-links a.active::after { width: 100% !important; }
+
+/* ---- Back to top button pulse ---- */
+@keyframes topBtnPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(86,224,198,0.4); }
+  50%      { box-shadow: 0 0 0 8px rgba(86,224,198,0); }
+}
+.back-to-top.visible {
+  animation: topBtnPulse 2s ease-in-out infinite;
+}
+
+/* ---- Reduced motion overrides ---- */
+@media (prefers-reduced-motion: reduce) {
+  .reveal             { opacity: 1; transform: none; transition: none; }
+  .particle           { animation: none; }
+  .photo-frame        { animation: none; }
+  .signal-strip       { animation: none; }
+  .highlight          { animation: none; }
+  .back-to-top.visible{ animation: none; }
+  .section-title::after { transition: none; }
+  .fill               { transition: none; }
+  .tilt-card          { transform: none !important; transition: none; }
+}

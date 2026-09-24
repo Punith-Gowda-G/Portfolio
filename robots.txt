@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://punith-gowda-g.github.io/portfolio/sitemap.xml

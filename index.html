@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Punith Gowda G — AI/ML Engineer &amp; Full Stack Developer</title>
+<meta name="description" content="Portfolio of Punith Gowda G — Final Year CSE student at KSSEM, AI &amp; Machine Learning engineer and Full Stack developer from Bengaluru, India.">
+
+<!-- Meta tags & SEO -->
+<meta property="og:title" content="Punith Gowda G — AI/ML Engineer & Full Stack Developer">
+<meta property="og:description" content="Portfolio of Punith Gowda G — Final Year CSE student at KSSEM, AI & Machine Learning engineer and Full Stack developer from Bengaluru, India.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+<!-- Background canvas script (lightweight constellation animation) -->
+<script src="js/bg3d.js" defer></script>
+</head>
+<body>
+
+  <!-- 3D background canvas -->
+  <canvas id="bg3d-canvas" aria-hidden="true"></canvas>
+
+<!-- Loading Screen -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-console">
+    <span class="loader-line">$ booting_portfolio<span class="cursor">_</span></span>
+  </div>
+</div>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Cursor glow -->
+<div class="mouse-glow" id="mouseGlow" aria-hidden="true"></div>
+
+<!-- Fluid Elastic Jelly Cursor -->
+<div class="cursor-blob" id="cursorBlob" aria-hidden="true">
+  <div class="cursor-blob-inner"></div>
+</div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<!-- Navbar -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="logo">PG<span class="dot">...</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certs</a>
+      <a href="#profiles">Profiles</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button class="nav-burger" id="navBurger" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- 1. HERO -->
+<section class="hero" id="hero">
+  <div class="particles" id="particles"></div>
+  <div class="hero-inner">
+    <div class="hero-photo">
+      <div class="photo-frame">
+        <img class="hero-photo-img" src="assets/images/profile.png" alt="Portrait of Punith Gowda G" onerror="this.src='assets/images/profile.jpg'; this.onerror=function(){this.style.display='none'; this.parentElement.classList.add('photo-fallback');}">
+      </div>
+    </div>
+
+    <p class="eyebrow">// Final_year_cse · Bengaluru, India</p>
+    <h1 class="hero-title">Hi, I'm <span class="highlight">Punith Gowda G</span></h1>
+
+    <div class="type-console">
+      <span class="prompt">role &gt;</span>
+      <span class="typed" id="typedRole"></span><span class="cursor">_</span>
+    </div>
+
+    <p class="hero-intro">
+      I build machine learning systems and full-stack applications that turn messy real-world
+      data into decisions people can act on — from ball-by-ball win probability models to
+      the dashboards that run on top of them.
+    </p>
+
+    <div class="hero-cta">
+      <a href="assets/resume/resume.pdf" class="btn btn-primary" download>
+        <i class="fa-solid fa-download"></i> Download Resume
+      </a>
+      <a href="#contact" class="btn btn-outline">
+        <i class="fa-regular fa-paper-plane"></i> Contact Me
+      </a>
+    </div>
+
+    <div class="hero-social">
+      <a href="https://github.com/Punith-Gowda-G" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      <a href="https://linkedin.com/in/Punith-Gowda-G" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="mailto:punithgowdag789@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://leetcode.com/Punith-Gowda-G" target="_blank" rel="noopener" aria-label="LeetCode"><i class="fa-solid fa-code"></i></a>
+      <a href="https://www.hackerrank.com/Punith_Gowda_G" target="_blank" rel="noopener" aria-label="HackerRank"><i class="fa-brands fa-hackerrank"></i></a>
+      <a href="https://www.codechef.com/users/punith_gowda_g" target="_blank" rel="noopener" aria-label="CodeChef"><i class="fa-solid fa-utensils"></i></a>
+      <a href="https://www.geeksforgeeks.org/user/punithgowdag789" target="_blank" rel="noopener" aria-label="GeeksforGeeks"><i class="fa-solid fa-terminal"></i></a>
+      <a href="https://www.kaggle.com/punithgowdag" target="_blank" rel="noopener" aria-label="Kaggle"><i class="fa-solid fa-chart-simple"></i></a>
+    </div>
+
+    <!-- Signature element: live "model output" ticker tied to flagship ML project -->
+    <div class="signal-strip" aria-hidden="true">
+      <span class="signal-label">win_probability.model.predict()</span>
+      <span class="signal-value" id="signalValue">CSK 63.2%</span>
+      <span class="signal-bar"><span class="signal-fill" id="signalFill"></span></span>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About"><i class="fa-solid fa-chevron-down"></i></a>
+  </div>
+</section>
+
+<!-- 3. ABOUT -->
+<section class="section" id="about">
+  <p class="section-eyebrow">01 · About</p>
+  <h2 class="section-title">Who I Am</h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>
+        I'm a Final Year Computer Science Engineering student passionate about
+        <strong>Artificial Intelligence</strong>, <strong>Machine Learning</strong>,
+        <strong>Full Stack Development</strong>, and problem solving. I enjoy building
+        real-world applications that solve practical problems, and I spend a lot of my
+        spare time learning modern tools and shipping side projects end-to-end.
+      </p>
+      <p>
+        My goal is to work as an ML/AI engineer where I can take models from notebook to
+        production — clean data pipelines, sound evaluation, and interfaces that make the
+        output actually usable.
+      </p>
+      <div class="about-facts">
+        <div class="fact"><span class="fact-label">College</span><span class="fact-value">K S School of Engineering and Management</span></div>
+        <div class="fact"><span class="fact-label">Degree</span><span class="fact-value">B.E. Computer Science &amp; Engineering</span></div>
+        <div class="fact"><span class="fact-label">Graduation</span><span class="fact-value">2027</span></div>
+        <div class="fact"><span class="fact-label">Focus</span><span class="fact-value">AI · ML · Full Stack</span></div>
+      </div>
+    </div>
+
+    <div class="about-stats reveal">
+      <div class="stat-card">
+        <span class="stat-number" data-count="15">0</span>
+        <span class="stat-label">Projects Built</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-count="300">0</span>
+        <span class="stat-label">Problems Solved</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-count="6">0</span>
+        <span class="stat-label">Certifications</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-count="4">0</span>
+        <span class="stat-label">Hackathons</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. EDUCATION TIMELINE -->
+<section class="section" id="education">
+  <p class="section-eyebrow">02 · education</p>
+  <h2 class="section-title">Education Timeline</h2>
+
+  <div class="timeline">
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <span class="timeline-year">2023 — 2027</span>
+        <h3>B.E. Computer Science &amp; Engineering</h3>
+        <p>K S School of Engineering and Management, Visvesvaraya Technological University</p>
+        <span class="timeline-meta">CGPA: 8.98 / 10</span>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <span class="timeline-year">2021 — 2023</span>
+        <h3>PU College (Science)</h3>
+        <p>B G S Pre University College</p>
+        <span class="timeline-meta">Percentage: 94%</span>
+      </div>
+    </div>
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <span class="timeline-year">2020</span>
+        <h3>SSLC</h3>
+        <p>Jain Vidyaniketan</p>
+        <span class="timeline-meta">Percentage: 95%</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. TECHNICAL SKILLS -->
+<section class="section" id="skills">
+  <p class="section-eyebrow">03 · skills</p>
+  <h2 class="section-title">Technical Skills</h2>
+
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-card-head"><i class="fa-solid fa-code"></i><h3>Languages</h3></div>
+      <div class="skill-bar"><span class="skill-name">Python</span><div class="bar"><div class="fill" data-level="90"></div></div></div>
+      <div class="skill-bar"><span class="skill-name">Java</span><div class="bar"><div class="fill" data-level="75"></div></div></div>
+      <div class="skill-bar"><span class="skill-name">C</span><div class="bar"><div class="fill" data-level="70"></div></div></div>
+      <div class="skill-bar"><span class="skill-name">DSA</span><div class="bar"><div class="fill" data-level="65"></div></div></div>
+      <div class="skill-bar"><span class="skill-name">SQL</span><div class="bar"><div class="fill" data-level="80"></div></div></div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-card-head"><i class="fa-solid fa-globe"></i><h3>Web</h3></div>
+      <div class="skill-bar"><span class="skill-name">HTML</span><div class="bar"><div class="fill" data-level="90"></div></div></div>
+      <div class="skill-bar"><span class="skill-name">CSS</span><div class="bar"><div class="fill" data-level="85"></div></div></div>
+      <div class="skill-bar"><span class="skill-name">JavaScript</span><div class="bar"><div class="fill" data-level="65"></div></div></div>
+      <div class="skill-bar"><span class="skill-name">Flask</span><div class="bar"><div class="fill" data-level="75"></div></div></div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-card-head"><i class="fa-solid fa-brain"></i><h3>AI / ML</h3></div>
+      <div class="skill-bar"><span class="skill-name">Machine Learning</span><div class="bar"><div class="fill" data-level="80"></div></div></div>
+      <div class="skill-bar"><span class="skill-name">NumPy</span><div class="bar"><div class="fill" data-level="85"></div></div></div>
+      <div class="skill-bar"><span class="skill-name">Pandas</span><div class="bar"><div class="fill" data-level="85"></div></div></div>
+      <div class="skill-bar"><span class="skill-name">Scikit-Learn</span><div class="bar"><div class="fill" data-level="78"></div></div></div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-card-head"><i class="fa-solid fa-database"></i><h3>Database</h3></div>
+      <div class="skill-bar"><span class="skill-name">SQLite</span><div class="bar"><div class="fill" data-level="80"></div></div></div>
+      <div class="skill-bar"><span class="skill-name">MySQL</span><div class="bar"><div class="fill" data-level="75"></div></div></div>
+    </div>
+
+    <div class="skill-card reveal">
+      <div class="skill-card-head"><i class="fa-solid fa-toolbox"></i><h3>Tools</h3></div>
+      <div class="skill-bar"><span class="skill-name">Git</span><div class="bar"><div class="fill" data-level="85"></div></div></div>
+      <div class="skill-bar"><span class="skill-name">GitHub</span><div class="bar"><div class="fill" data-level="85"></div></div></div>
+      <div class="skill-bar"><span class="skill-name">VS Code</span><div class="bar"><div class="fill" data-level="90"></div></div></div>
+      <div class="skill-bar"><span class="skill-name">Postman</span><div class="bar"><div class="fill" data-level="70"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. PROJECTS -->
+<section class="section" id="projects">
+  <p class="section-eyebrow">04 · projects</p>
+  <h2 class="section-title">Projects</h2>
+
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-chip active" data-filter="all">All</button>
+    <button class="filter-chip" data-filter="ml">Machine Learning</button>
+    <button class="filter-chip" data-filter="web">Web / Flask</button>
+  </div>
+
+  <div class="projects-grid" id="projectsGrid">
+
+    <article class="project-card reveal" data-tags="ml">
+      <div class="project-image">
+        <img src="https://img.magnific.com/premium-photo/boy-cricket-body-injury-sports-field-with-glowing-red-ai-generated-effect-from-batting-action-kid-child-batting-athlete-with-stress-graph-hologram-muscle-pain-from-wicket-mistake_590464-202150.jpg?semt=ais_test_b&w=740&q=80" alt="Cricket Win Probability Prediction dashboard" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+        <span class="project-tag">Machine Learning</span>
+      </div>
+      <div class="project-body">
+        <h3>Cricket Win Probability Prediction</h3>
+        <p class="project-problem">
+          Predicts a team's real-time win probability, ball by ball, using historical
+          match data and in-game momentum shifts.
+        </p>
+        <ul class="project-features">
+          <li>Ball-by-ball probability engine</li>
+          <li>Momentum analysis module</li>
+          <li>Live probability visualization</li>
+        </ul>
+        <div class="project-tech">
+          <span>Python</span><span>Scikit-Learn</span><span>Pandas</span><span>Flask</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Punith-Gowda-G/Cricket-Pro-app" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+          <a href="https://cricshift-1.onrender.com" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card reveal" data-tags="ml web">
+      <div class="project-image">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQA7QMBIgACEQEDEQH/xAAcAAAABwEBAAAAAAAAAAAAAAAAAgMEBQYHAQj/xABDEAABAwMCAwYDBQYEAwkAAAABAgMEAAUREiEGMUETIlFhcYEUMpEjQlKh0QcVYrHB8CRDc4Lh4vElJjNEcoOSlLL/xAAZAQADAQEBAAAAAAAAAAAAAAAAAQIDBAX/xAAlEQACAgICAgICAwEAAAAAAAAAAQIRAzESIRNBBCJRUhRxgTL/2gAMAwEAAhEDEQA/AMuXlMtOKcODkaQkbS04p2sdxNYN9o2XsIjnRlc6CRSi0bZqShLG1cxRwNqGmmICaP0oqB3sUoE1LGhtKCUlJ60bG2aet2qTcVttsII1KACl7AVb7XwYyyEmc8Xl+CU6Uit4Y5yMZZIxeyoQLXKmrAabVjxIq7WPhIowosqcXyO2QKloYhNKUzFU3qQQCBzqSjS34jvaMO6D1Sd0mtP4r9sj+SvSJay8OIZSFPJGR0xVmbbShICBgDwquMcXMNsark0WgCMrb3B9qnoc2POYS/EdQ40rkUnNXHHwVEPJyHFc5896FAVQgEA4yBis6/ajfbdAgKhhoOSnR3EBPLzrRiMp35VWuIeC7be19pKQCvGAsHcUg7K1+za0QHbUh9C0KfWBqx0q0z+Ho8pOl+O256pBqH4a4KXw7cFvRZTimlckK5Crgh1xPzDak0gTZnlx/Z7b3lqVHC46v4eVV6dwLdIyVdgW30jlg4NbMXEEd5GfSklJaVnSCM+NQ8aZoskkeeJMKVDWUyozjWPxJ2oiACkg7hVb7ItrD4IW2hQPQiq/ceCrXJOrsOyWeqNqxlha0arMvZhsptUSTrAOkmltlp1JrQbz+zmU6hXwUhDmOSXNj9apr3D14thUibCcCPxoGoflUuLGpqxgkZruK6oaVEeHOjJ3qGaIKQCN+dE0DrS6kdaTO9TZVDCbtLTTtO6BTe4jEsA+NO20fZitJGaQRGyTS2MoFP7bYbpcQVQ4LjjX3nFAJQPVRwKkRYYkVopl3BD0gf5MMZSD5uEY+g96qOOUtImWSMdsreMGn8G0TZ5/w0ZZH4j3QfrU1boccTGktNBK1LAyrc/nV0JCSd8kJwRjnXQvi/szB/J/Uoq+E3YzHxEx5IAx3EnP50diLGZILbI1Dko7mrJf14hAHmVjHmMVXk5xXVjwwj6OaeWcvY+tSe0uDIHIHP0FWrBQkq22SSM9aqdskoiydbqSRpIBH3fOrOxJafb1MrCk4OT1FW0RFlKS1IcZEtoFTSlHvNHPZkcwccj61e7Zb5cK2tvXdL7zrmO6kjLCPE+J/lVFE6Tw3f3ZDTanILq8vNpHn8wHiK0Vm+w5rKC1dmnNQVqZSsqUvKduXLfxrOTei4xRBcXMtxoYSh1LqFEaVJPLyqu2+4zLc4HoMhbKvFtW3uOtS3Eygm3talDJXjFQsCM9MktMRkFTriglKR1q1rsh76NG4U4wk3V74WbFyoJKlPtYCQPEg1cW3ApAKSFA+FZFxj8RbLIu02tSS2AFz5KF4Us+A66c1PcCi7O8PRpqJzawe4GnASVAHc58a55SXKkdShJQ5M0EGjZpm0X3EJLgCSOeDnNO00gDD1rhTmu4rhVg4JA96AClrwouCOacilc1wg9DQAkezO3ymikFGxAUk0qW0q5p966GcDANACBYZVyJTSTsAqB7qFjzFOi0f7NF1ON+dICs3XhG0XA5lwUavxoGk/UVU7j+zBvvKtk1Q8EOjP586t/FXG0Xh5bCJLLjinT9wfLTYcecOyYK5CJQQsDdCgQrPpUPGmV5GvZl154Wu1lQXJbIMcHHaoVlNQRbOT19K0uD+/eOGJLCnPh4BJ7NSkZUoVDy/wBnd9YdKWAy6n8QViufJjafR0Y8qa7KFdkj4sfWnDW6fakb0D8WjHU4pxHSSUpAyojkKmWilsslm4xkwYAtdyjN3C1jA7Bw4UgfwqqebskO9x1yuGn1uad1w5A0uIz0B5KqAtPCj8zDsv7JrqOpq0WJEW23SZbYzyGnD2a2kKPzgDcD9K1w5mnRnkwRkmyGgxXo91DUlpaFt6iUuDBG1WNluRKWRFYW4B+EfL71FcW8Yz7NNkMKhQpmhlKmjKayppR8+ZG3I1mt7434jvAKJd0eQx0jxvsmx5YTz9663nVmEfiSq/Rqt7tMuVpRHUw880CpyM08lTifPSKrGMHCgQeoxuKzWLJejyQ/HkONPpOQ6hZCgfUb1t9mfYv9phrvjRdkrZR/jWkhLucfeA2VTx576ZGX4/FWmVvmOW1HaUts5aWpPvUnPsrjDJlQ3m50IKKC/HOdKhzCh90+VObLbWGoqrtdmlKitn7JkDvPqHQDw8a2c1VnPxknVD23W/t4TLlwkRmHpGTHad2U8kdakYlnajIUFj4cjJ7JDWpbox93oT7mqZxbKflPNXBICJaZK2UrbIBShI2TsdvSu2Ljz9yw5Ld7elSXTgx2EYUVDByD/wAa53k7Orw/VNHXuPOFZs02u4WyezFSoj41awXELG2SgbYq5xrZb7DAdkQZaXpjzWWlHAVpO/dT4461glzU3Pu8iVEgIt8ZxWpMcHZI8qlYVyulvmCRESVOqbKUaklYAPh9Ky8zTpnSviclaXZbL+6pm2XFx0L3bCcqJOrv/SluC+PlWCIzFuEUqhYyhaRuKqK2rpdnu0uU111XVvOdP+0bCpdhpDMRLLwRgc0rTqP0oVzl0XUcUKlRutjvEC8xkvQn0ryMlPJQ9RUpjHOsSsNuvD76HbJFfbwdnzlKR/TFbHbPjPgWv3h2fxIACy3yJ8a04tbOVyg5PhodURxtCvm/KlDgUkrJOBSExNwFhJUHNgORpq3Idl7JToAPPxp09EQ+MLz9aLHiLY2Sru9KYhdAISBnOKPnFcBA50bY0hhNOd6PsRvg1w4AydhTUv8Aau6GBkDmemKBCF1skG6N6JTKVjxI5VVHv2W2ZUhLrZcbAOSgHY1fEDCd6NRYUhrb4LEGOlmOgJSkY22p16ihQpDPNSuH512uKQw3paScl1fKr1Y+G4kDQG2y/J6kjkas1rsD76UdqAwwByGxNWSHCjwUaWWxnqo865Y4pS3o6JZEtEXbrCcdpOx/piqF+023pZvLk0OtsoCG0NI+84RnOMeFayXPP61RuIbpb/3+/bb22l2I60go1jZtW++eafWt/HGOyYZMjbcTIbs7IuycS3VIewEpeWcpWByBPSoCVZpTC9Lo0k8j0Pp41ql44RQHHVWGQJqEp1ORVKBdSk9R+Iem9VpnLKi2AHGhsqM+Nh/6SeRqvGk7j2ivMppRn9WUUwXEHnvWh8JcVRGIrEG4o7HSkJDw3ScbDPhTQ2yPLSpcVWjTutp0gKR+o86jXYEVKigrW8odGBsP93KruHoy8WW+11/Y5svEb1n4lflRXlmK8+oPtIUNL6NXI9Per5M4sh322Ppkph29ptzQ2h0lxSk6eYSOfPGKzZiJ2au6hDKc427yj79ParHB4XuFyt6psIIWhC9LgUdJSPHJ2I9Ky45I910dF4Z9N9hb3doc2N8NGDxR2i3O0dSEA5GMADkPWoNqOyEFKEoSD+EYqTv/AA+9aILMhyS24XFqbKUA93A8TzqCZWvXhO+funaoqcnRvyxY4WOWrWxOkLh/vGNDfUnLPbg6XD+HVyT71KW6x3aBK+AmW99S9OW0pyUr8CCNiKhn+H51zS47bWlyw0nU42lPeQPTrUrwVxTere4i3P3J5mG25hSHQSWxg7b94DPStIpQ/wCkc2STzPlBlwjcKSUo1XeVHtrISVdkndwgb/KKd2uRYWIokWWC5LcUopQ9LQVEnxCByHrVcuPErJRI+GS/McW2oKdxoQgEYJ6k+9IWHh3iKbCZMGeyu1rBWUod06FfxVsslulo5nh4w5S2aHY+L47dzTDu8kpdcZTo047NCtR225HlV8QpJGUq1DGRg1i7FksNsUoXK4GZITuqPE5e6qsdl47jJU3EcZMJCe60FK1beZpyj+DNT/JopzRk7bGmEO6sSSE5G6c6gcg0+UcgFNZlhiaAIohJA5avKua0jmMUAKkikXe8MDu+Yo3PkaOkUaGNVMOuBKS73OvpThppLQwgYFKUKVjo5XCcUauUAAV2gBXaAGCnaTL1EWaQUetWQLKc51lX7RF/941/6KP61o63h1rPuO7ZJlTTcGAHU6AlaRzAHWs8qbidHxZKOS2QtrgXGVqmWwqSuKU5cQspUjOd8j0/Oncq82udJEPidIYnhIKbnHTsrI/zEjn6ilOGuJBZooSIXaBasurQvDmN8YB2OPA4qQvnC1o4viO3WzPpanq0hLhJCCfwrRzSenLrUQtL67Ns7TlU10Q7/D9wbcZDERFzjvD/AA78dBebdB65H5g06HCpbA/ftxjwQP8Ay6FBx0Dw0jYe9Ut97iDhcyLW9ImW8OjUptDmlDn8SSP5irb+z7huZOsyXVtLbHarUpbgKdXnvz9a1jlbdNUc2XBxjalaFJ0u02YxmrJaBMlPqUhLs7LnLHJA2+tTXD9wm3CzzHb5ObY7KSpBD6ksIaGhBAAAGOvnUgvg6CJUR+RNWpMNxTgQ2kAEnHzKPIbUTiaNZbuiLqeC+xWSRHKSpXJO6zSk5XscFFxqv9KTxzdLZIbag22UHj8S46pSUlKCVcsZO/rUFZrVJuVwahxW9Tiz1+6OpPgBS3HUeHF+CXDjBjUpaVDUSVYPXNWXhXia22SzsNMW92RcJQ0OOKICAPDPPHoKI5OLdlZMXOK4Mm4EVbMZyDw/NECLE779xcQAmU9y0hR20jG/tSrHwVwSqNxnFgPTvnYUynUt5vHzJUn3HOs6/aZMkv39+2Nk/BwmUpZjIGEoyAScdT51cbfOjWq92lmToTptDKEpWNidz7UuXJ9hxUYqgvEmLfZbl8FHDEL4daUpS2Bk52yrqao0C6RotqZZVIcUrTgtNZz79K0HjHhC431PxMK5yJSckqiurCRp6aMDB96qtr4MnPv9ixAe7ROMqcSUhPqTWlW/wZOaUafYyhS1POKe7JSNWAEnc4FTMaI7clFliM4+QMkNp1EfpVvtfAUKIyHLxI1rSclDKsIA81GpJF7tkEKiWSL27oGA3FRsT5qrVOlSOd/Z2R/DXD93tGHZM0NMBBUqOe8o+XlU7wfxK1epCmRracQDlpXXzFNUWbiS7pUZklq3MkHDbQ1HfxNO+GuDBZJvxsiYqQ8ElI0jSMHnkVDaKVltOOtJHBOEjPjXQSv5CMUoBtvis9GoEpwKNQoUhgriuVdxQoAKlOn3o1dxQoA7XDXaayJ0aOoJdXhR6CldDGq002eQd/DwqQUmkloz0rQzIJ9gleSokeB6U0ebG+1TzrINMJDGUnFAGW8SpSzenkJAAwDgDFN4NwlwHS9BkKZcONRABC8ZwFD7w3NS3GdmlpmqntIUtpQAXgfLiq0he1ckrjKz2MbjkgkzTLbxRBnW1xdxYQiRGTlSQjWlWT9zPpyPKoyZxnLkudjaoY1cgXQXFH0SkgD6mqe0ctOJG21bHBgxYLIRGYQ0gY+QY+taQlKWjmzY8eHurKWLHf744XLi72KD3ghxROPRI2qFujzHCtymJeS9JbbSlCQF9mSo4PMdM9K1R11thorccShsAklRwKpVtiRr9xbdHEtpfjADS4BlAIA8aco99E48radroyO/TLje3Q98EGWGlKKENg4SCcnc86ccNOuKuMcSnfswtIQk4GN63xrheJp3bGD4AU0V+z6xLmCR2S0K+8hKsBfrVuCezBZnF9GS8ZRZUji65ux3G0NqdCQ5zyMDrV3k8FucTxkTpDZiLS02iO4Fd4pCcZ9CaucDgrh+E+XmYCCSdWlZKk59DVgCUoSEpACQMYHKtLXow+xjrM3iTg4hqcwJcBG2sAnA9elXL9+T7m2y3YoK5GtAJedOG0eviauJjtrSQpCSlXMEc6UQ2ltIS2kISOiRgUcg4lTj8JSZ4C+Irgt85z2DPcQKskC3Qre2EQ4zbSR+FNOids0ktwDn83QVFtjpIOVBI35eFJYU6dtk9aDbS1K1L+lONhyGKTKCoQlAwkAUagK7QMFEVk9cCjc6KU567UAGTyGN67XAMDbau0gO0K5moy53IM5Zj4U7jc9E0m6Q0r6QpcbgIw0NYU6fyrPb3xQ3EmFsfbL++fCmvFHEvZqVCgPZeOzrmeXvVKSpZyVElROSc86wk3I3ikj0URRFJpWhius5mNFt5po8hKBlew8aldGaItlKhhWKLFRBPxkuIOMEGqbxDwe0+VPwfsn+qcd1X6VpXwjY6Vww0HmCfSk0nsqEpQdpmDpivxJDjEtvs1pTnfrv0NaKm5X68qH7mtojNHH+IlHGPMDr7D3q4fuyEVJU5GbUtO6SpAOKdhHlUKHF9HRk+R5EuS7KnG4QbeX217mvXB38B7jafQcz7mp+Lb2IjQahstsoH3UJxT7RRVlLaVLcOEpGTVpJGEpuW2JELGE7b7Z8KKy4wsrLa0lSThW9R7zjt2QGo7pjs57yuqx/fSnwgsOsFCkLAAxrGxNMgSMtwv8AZR2i4c7qIwAKepOeex86YfCqYcAAd+GwCktuKTpPXUEnfPPNM5lySqM65DubJU2NwvTpb8ySc0mwJaTcIcM4kSEII55NJpu8JSiO236bVQoFvsXFS5ITL+OUzzdacXoSfHkMn3qdTZGmg02HNORoS4dwTjkr8J86mwLQ3Jaf2ZcSo+Ro6Wxq1LG9UpDKYb7qZwQhTJCwfiFNYx1ynfG9Sjd4cZJMdlUtCsYJl5HsSKOQ0izCu1XU8QygMm2p/wDsj9KCeIpK9kQGtQ6fFDb8qXIosKjpGcZorZURlVQjN7mrdSk21JBO+mSP0qdSSR5U0xHaFChTAFChULdLpqK40NfLZbo6eQ8/P+xMpUNKxS6XLTqjxSCsfOvon086zviC+lxxUG2rI6OveB8Aab8T8QkBUK1qGASHXs/kKr7BS2hIAISsZJz1rCTcuzeKUehN+LoTq3znfPU+NIABQznHlU04z2zQBAyRjWeVRz0cJI7+nyFTFlNF2iXS92U4UFPRx+DKh/8AHp7VZ7TxhAm918hlwbE5JSPXqPes9tfHUN5Yj3BpUd/kTj+nP6Zqf+Gt11b7Zhbaz0cZXgj6VccjjszeNPRorbiHEBba0rQeSknIPpRxWbNN3e1LUu2yi6gn/wANZ0n3O4P0qat3GzWsR7qwuO9yzpxn25fQ1qsiejNwaLfXMUjFlx5aAuO8hwfwnlS9WQEcyEkqO2KTbKhshzWD1VzFLEatjyohaTq1AYNABxnG49xQCt6GnbnQx4igBs9b4r6w4tka0nVlIxk0upKuSTtRlKCRknAriHEL+VQNAEVOmBU1MQnGptWUnkrcf0zUU/wvZpsgSHYhLqTstLigR6b7VM3q1IuLacLLT6TlDyRumoBZv1sJ+Kt4uDY5PRVhK8eaSf60MCYix4NtZ7CK2EDYqGpSyr1JyT7mlQdedQIQnBAzvnNRNpvDFxedjriyITzScqbkAJyPEVJSGA/GUlt9bC+aHkDJQocjipoYnOjxLjLShbzaHQktraWnGpPPYfe59NqfR7XBZaQgsB7A27c9oR7qzVfn2vieXpdYk2tA0J+yW0o6iOaifPb0/Oixr+5DUhifriPgAKQ8glpR/hVnl7j0o7QUWpMSLyTGYH/tj9K4iDESoq+FZ1f6Y/SmkO9RpOU5TlJwpTS+0SD4HqPcVItuocSFtrSpPiDmnYARHZScoZbQfFKAKU8qFCmAKFcJAGTsBVbud0M7W1FXoiJHfdzjtfTwT59fIbmZSpDSbYpdLqZAWzDXhgZDj4PzeIB8PP6VQ7zevi3FW+2nQykYcdA2I8BSHEF/VMUYNtIRHScOPD7xHQeVQ7QSyhHZg6UHOnrjwrmk22dEVQVUdCfsgds93I3FIpStBUlzO38qknWwHUuau6rmabPN6xrCz3T16immNoXtzmpXw53P+WSetB5p1KtSNgo/KRypPUfmTgHO3l4VJslcgFYwF8ljV1+lS+hopPGEQuWsPADtG1ApI2I23osJM+GhqRbZa0nSDpWefjg86c8Vp021xAUdIKcfT/jRIKz+72iN1aOWOlO+ia7Ju3ceyof2N8ilWDgrA0n6jY/lVwhXG03tlCG3GnCsZ7Jfzfnz9qz/AEtr0JUAoZ5EcqZG0JClGK6tjcK0jdOfMUUM01VpeirLtqmOR1DcNk60e3UfWpGLxbcLcA3eohU2P85G/wCY/T3rM4XFt+sxSia2ZTPIk97H9f51b7VxlZ7jp1vpZWRghZ7vpn9cU1KUSXFSNFtt7t9ybQuLJQrVyBNSNZu9Z4jyu3in4d1W4cYI7302NLxrvxBZ8JcQJ8dP4CNYHoeftWscqZlLG0aCPGu1XrTxdbbiezU52L45ocGkj2PKrAkhQylQIPUVpZmAjNJFpOrOAD4ilqFMAqRgczQ8qNXMUARl5scO8sLblIVlSSkqQrScHnuKhYyZVrebgvuKcKBpaW5/nI/Cf4hVuptcILU+Opp7nzQoc0q8RQASFKS6EpTgbd36dfOnDjLbyCh9tLiTsQoZzVZWJUZ3SvIlNHVtsHR0UP61YbdJMqG0840ppZA1IV0P6UhkZL4Ts8lRcRG+Ge+65FUWyD/txmjwrNIaf1yZqXEggpCGtKjj8Ss7/wB8qma7QAK4SkAlRwAM58KC1JQgqWQlKRklRwAKrNzuP7wSUIJRCwSVK27XHiPw+XWlKSSGk2zl0uKriChtemCN1KJx23/L/P050PiS/mYpcK3q0RkHDrifvEdPShxPeH7pFkRLY4pDSUnLo5rVvyqk8JKKre/GWPtW169+efvVzSd9nRFVon22eyBCEdw5Pof+tKJSFAhWxOw/v++dcQslvvoUMZ89h/YpQArUTp7qhv4BX9imMUbHaAsq7uDkZGdv7NEcjstgq1Eg7YzRh9kULVnI7wP4tjzpy4hCvtUpCk56fyoAZMJSdaEk45Z8DXELcQVKbWpGrnjqRRnkJUMsZSUZGx5jwozawU5JVq67UxEJxaP+yycncjP500tO9tQs/MEke2KFCpWg9j9sDY46GlIm75z0A/8A1QoUDA930lKtxsf51GS7bGeXrKSheAdSFaaFChCY1sfEd1t81TMeUrs0gnSoZB9uVa3w/PduVpRKkJQHDsQgYFdoUmUg02HGmtpU+ykqGwUNiPQ1Fx7xPsd2RDiyVuMKydD3exjH60KFXBuyJpUafbH1SoiHnAApQ3CeVLg5NChXQ9HOtnaFChQAKFChQAjJisSgBIaS4Byz0o7LLbDaW2k6UIGAK5QoAUoeVChTArvED7jkxmGVYYLRcUkfeOrG/lVI4ymvh1iAlelh359OxVt40KFc09nTHRGNtpZZbDYAHLFVBn/C8WSUMjSnteXqN6FCoYy1RmkpeUAVY22zSix3ieW2cDlQoUehvZ1SR2KD4kAjyo0ZRSh5A+VJBHl/eKFCmI68A2TpSNzpPmM1GLKkuLAUdjihQqkJn//Z" alt="EstateIQ house price estimation dashboard" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+        <span class="project-tag">ML · Flask</span>
+      </div>
+      <div class="project-body">
+        <h3>EstateIQ</h3>
+        <p class="project-problem">
+          Estimates fair house prices from property features to help buyers and sellers
+          negotiate with real data instead of guesswork.
+        </p>
+        <ul class="project-features">
+          <li>Regression-based price model</li>
+          <li>Interactive input form</li>
+          <li>Flask web interface</li>
+        </ul>
+        <div class="project-tech">
+          <span>Python</span><span>Flask</span><span>Machine Learning</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Punith-Gowda-G/House_price_predictor" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+          <a href="https://house-price-predictor-six-nu.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card reveal" data-tags="web">
+      <div class="project-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKzPx1_Had_fqtuxypS41eA1i0kY2YwSMjiA&s" alt="FurEver Pet Care admin dashboard" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+        <span class="project-tag">Flask · SQLite</span>
+      </div>
+      <div class="project-body">
+        <h3>FurEver Pet Care</h3>
+        <p class="project-problem">
+          A pet-care service platform with appointment booking and an admin dashboard for
+          managing customers, pets, and visits.
+        </p>
+        <ul class="project-features">
+          <li>Customer &amp; pet records</li>
+          <li>Admin dashboard</li>
+          <li>Appointment scheduling</li>
+        </ul>
+        <div class="project-tech">
+          <span>Flask</span><span>SQLite</span><span>HTML/CSS</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Punith-Gowda-G/Furever_pet_care" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+          <a href="https://furever-pet-care.vercel.app" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project-card reveal" data-tags="web">
+      <div class="project-image">
+        <img src="https://static.wixstatic.com/media/bf1f85_60f1eed4b5414033883d4d25311a2027~mv2_d_4167_3750_s_4_2.png/v1/fill/w_1000,h_900,al_c,q_90,usm_0.66_1.00_0.01/bf1f85_60f1eed4b5414033883d4d25311a2027~mv2_d_4167_3750_s_4_2.png" alt="Hotel Management System booking panel" loading="lazy" onerror="this.parentElement.classList.add('img-fallback')">
+        <span class="project-tag">Flask · SQLite</span>
+      </div>
+      <div class="project-body">
+        <h3>Hotel Management System</h3>
+        <p class="project-problem">
+          Manages room bookings, availability, and guest records for a small hotel through
+          a simple admin panel.
+        </p>
+        <ul class="project-features">
+          <li>Room booking engine</li>
+          <li>Availability calendar</li>
+          <li>Admin panel</li>
+        </ul>
+        <div class="project-tech">
+          <span>Flask</span><span>SQLite</span><span>Bootstrap</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Punith-Gowda-G/Hotel_Management" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+          <a href="https://paradisepalace.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- 7. EXPERIENCE -->
+<section class="section" id="experience">
+  <p class="section-eyebrow">05 · experience</p>
+  <h2 class="section-title">Experience</h2>
+
+  <div class="experience-grid">
+    <div class="exp-card reveal">
+      <i class="fa-solid fa-diagram-project"></i>
+      <h3>Academic Projects</h3>
+      <p>Designed and shipped 15+ applied ML and full-stack projects across coursework and personal initiative, each taken from raw data to a working interface.</p>
+    </div>
+    <div class="exp-card reveal">
+      <i class="fa-solid fa-laptop-code"></i>
+      <h3>Freelancing</h3>
+      <p>Built small web and automation tools for local clients, handling requirements, delivery, and support end-to-end.</p>
+    </div>
+    <div class="exp-card reveal">
+      <i class="fa-solid fa-book-open"></i>
+      <h3>Self Learning</h3>
+      <p>Continuously studying ML systems design, DSA, and modern web frameworks through structured courses and hands-on rebuilding of research papers.</p>
+    </div>
+    <div class="exp-card reveal">
+      <i class="fa-solid fa-bolt"></i>
+      <h3>Hackathons</h3>
+      <p>Participated in 4+ hackathons, building working prototypes under 24–48 hour constraints as part of small teams.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. CERTIFICATIONS -->
+<section class="section" id="certifications">
+  <p class="section-eyebrow">06 · certifications</p>
+  <h2 class="section-title">Certifications</h2>
+
+  <div class="cert-grid">
+    <div class="cert-card reveal"><i class="fa-brands fa-aws"></i><h3>AWS Cloud Developing</h3><span>AWS Academy · 2026</span></div>
+    <div class="cert-card reveal"><i class="fa-brands fa-aws"></i><h3>AWS Cloud Foundations</h3><span>AWS Academy · 2026</span></div>
+    <div class="cert-card reveal"><i class="fa-solid fa-brain"></i><h3>Explore Machine Learning</h3><span>Infosys Springboard · 2026</span></div>
+    <div class="cert-card reveal"><i class="fa-solid fa-robot"></i><h3>AI Fundamentals</h3><span>IBM SkillsBuild · 2024</span></div>
+  </div>
+</section>
+
+<!-- 9. ACHIEVEMENTS -->
+<section class="section" id="achievements">
+  <p class="section-eyebrow">07 · achievements</p>
+  <h2 class="section-title">Achievements</h2>
+
+  <div class="achieve-grid">
+    <div class="achieve-card reveal"><i class="fa-solid fa-trophy"></i><h3>Coding Challenges</h3><p>Top rank in a college-level competitive programming contest.</p></div>
+    <div class="achieve-card reveal"><i class="fa-solid fa-medal"></i><h3>Hackathons</h3><p>Finalist / winner placement at an intercollegiate hackathon.</p></div>
+    <div class="achieve-card reveal"><i class="fa-solid fa-file-lines"></i><h3>Paper Presentation</h3><p>Presented a technical paper at a departmental symposium.</p></div>
+    <div class="achieve-card reveal"><i class="fa-solid fa-users"></i><h3>College Events</h3><p>Core organizing team member for a technical fest.</p></div>
+    <div class="achieve-card reveal"><i class="fa-solid fa-screwdriver-wrench"></i><h3>Workshops</h3><p>Attended and led hands-on workshops on ML and web development.</p></div>
+  </div>
+</section>
+
+<!-- 10 / 11. CODING PROFILES + TECH STACK -->
+<section class="section" id="profiles">
+  <p class="section-eyebrow">08 · coding profiles</p>
+  <h2 class="section-title">Coding Profiles</h2>
+
+  <div class="profiles-grid">
+    <a href="https://leetcode.com/Punith-Gowda-G" target="_blank" rel="noopener" class="profile-card reveal">
+      <i class="fa-solid fa-code"></i>
+      <h3>LeetCode</h3>
+      <span class="stat-number" data-count="350">0</span>
+      <span class="fact-label">Problems Solved</span>
+    </a>
+    <a href="https://github.com/Punith-Gowda-G" target="_blank" rel="noopener" class="profile-card reveal">
+      <i class="fa-brands fa-github"></i>
+      <h3>GitHub</h3>
+      <span class="stat-number" data-count="500">0</span>
+      <span class="fact-label">Contributions / Year</span>
+    </a>
+    <a href="https://www.hackerrank.com/Punith_Gowda_G" target="_blank" rel="noopener" class="profile-card reveal">
+      <i class="fa-brands fa-hackerrank"></i>
+      <h3>HackerRank</h3>
+      <span class="stat-number" data-count="5">0</span>
+      <span class="fact-label">Gold Badges</span>
+    </a>
+    <a href="https://www.codechef.com/users/punith_gowda_g" target="_blank" rel="noopener" class="profile-card reveal">
+      <i class="fa-solid fa-utensils"></i>
+      <h3>CodeChef</h3>
+      <span class="stat-number" data-count="1600">0</span>
+      <span class="fact-label">Rating</span>
+    </a>
+  </div>
+
+
+  <p class="section-eyebrow" style="margin-top:4rem;">09 · tech stack</p>
+  <h2 class="section-title">Tech Stack</h2>
+  <div class="stack-icons reveal">
+    <span><i class="fa-brands fa-python"></i>Python</span>
+    <span><i class="fa-brands fa-java"></i>Java</span>
+    <span><i class="fa-solid fa-flask"></i>Flask</span>
+    <span><i class="fa-brands fa-html5"></i>HTML</span>
+    <span><i class="fa-brands fa-css3-alt"></i>CSS</span>
+    <span><i class="fa-brands fa-js"></i>JavaScript</span>
+    <span><i class="fa-solid fa-database"></i>SQLite</span>
+    <span><i class="fa-brands fa-git-alt"></i>Git</span>
+    <span><i class="fa-brands fa-github"></i>GitHub</span>
+    <span><i class="fa-solid fa-brain"></i>Machine Learning</span>
+  </div>
+</section>
+
+<!-- 12. SERVICES -->
+<section class="section" id="services">
+  <p class="section-eyebrow">10 · services</p>
+  <h2 class="section-title">What I Can Help With</h2>
+  <div class="services-grid">
+    <div class="service-card reveal"><i class="fa-solid fa-robot"></i><h3>AI Solutions</h3><p>Prototyping and shipping ML models for prediction, classification, and analytics use cases.</p></div>
+    <div class="service-card reveal"><i class="fa-solid fa-globe"></i><h3>Web Development</h3><p>Building Flask-based web apps and dashboards from data to deployment.</p></div>
+    <div class="service-card reveal"><i class="fa-solid fa-gears"></i><h3>Python Automation</h3><p>Scripting repetitive workflows — data cleaning, scraping, reporting — into reliable tools.</p></div>
+    <div class="service-card reveal"><i class="fa-solid fa-chart-line"></i><h3>ML Projects</h3><p>End-to-end project support: problem framing, data prep, modeling, and evaluation.</p></div>
+  </div>
+</section>
+
+<!-- 13. RESUME -->
+<section class="section" id="resume">
+  <p class="section-eyebrow">11 · resume</p>
+  <h2 class="section-title">Resume</h2>
+  <div class="resume-box reveal">
+    <div class="resume-preview">
+      <i class="fa-regular fa-file-pdf"></i>
+      <p>resume.pdf</p>
+    </div>
+    <div class="resume-actions">
+      <p>Take a full look at my education, projects, and skills in one document.</p>
+      <a href="assets/resume/resume.pdf" class="btn btn-primary" download><i class="fa-solid fa-download"></i> Download Resume</a>
+    </div>
+  </div>
+</section>
+
+<!-- 14. CONTACT -->
+<section class="section" id="contact">
+  <p class="section-eyebrow">12 · contact</p>
+  <h2 class="section-title">Let's Talk</h2>
+
+  <p class="contact-lead reveal">Have a question, a project idea, or an opportunity? Reach out directly through any of these channels.</p>
+
+  <div class="contact-location-bar reveal">
+    <i class="fa-solid fa-location-dot"></i>
+    <span>Based in <strong>Bengaluru, Karnataka, India</strong> — Open to remote &amp; on-site opportunities</span>
+  </div>
+
+  <div class="contact-cards reveal">
+    <a href="mailto:punithgowdag789@gmail.com" class="contact-card">
+      <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
+      <div class="contact-card-body">
+        <span class="contact-card-label">Email</span>
+        <span class="contact-card-value">punithgowdag789@gmail.com</span>
+      </div>
+      <span class="contact-card-action">Send email <i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+
+    <a href="tel:+917899688155" class="contact-card">
+      <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
+      <div class="contact-card-body">
+        <span class="contact-card-label">Phone</span>
+        <span class="contact-card-value">+91 7899688155</span>
+      </div>
+      <span class="contact-card-action">Call directly <i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+
+    <a href="https://linkedin.com/in/Punith-Gowda-G" target="_blank" rel="noopener" class="contact-card">
+      <div class="contact-card-icon"><i class="fa-brands fa-linkedin"></i></div>
+      <div class="contact-card-body">
+        <span class="contact-card-label">LinkedIn</span>
+        <span class="contact-card-value">Punith-Gowda-G</span>
+      </div>
+      <span class="contact-card-action">Connect <i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+
+    <a href="https://github.com/Punith-Gowda-G" target="_blank" rel="noopener" class="contact-card">
+      <div class="contact-card-icon"><i class="fa-brands fa-github"></i></div>
+      <div class="contact-card-body">
+        <span class="contact-card-label">GitHub</span>
+        <span class="contact-card-value">Punith-Gowda-G</span>
+      </div>
+      <span class="contact-card-action">View profile <i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- 15. FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#hero" class="logo">PG<span class="dot">.</span></a>
+      <p>AI &amp; ML enthusiast, building things end-to-end.</p>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-social">
+      <h4>Elsewhere</h4>
+      <div class="footer-icons">
+        <a href="https://github.com/Punith-Gowda-G" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/in/Punith-Gowda-G" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:punithgowdag789@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://www.kaggle.com/punithgowdag" target="_blank" rel="noopener" aria-label="Kaggle"><i class="fa-solid fa-chart-simple"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> Punith Gowda G. All rights reserved.</span>
+    <span>Designed &amp; Developed by Punith Gowda G</span>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="js/main.js"></script>
+<script src="js/resume-generator.js"></script>
+</body>
+</html>

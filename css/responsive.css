@@ -1,0 +1,38 @@
+@media (max-width: 980px){
+  .about-grid{ grid-template-columns: 1fr; }
+  .skills-grid{ grid-template-columns: repeat(2, 1fr); }
+  .projects-grid{ grid-template-columns: 1fr; }
+  .experience-grid{ grid-template-columns: repeat(2, 1fr); }
+  .cert-grid, .achieve-grid, .services-grid{ grid-template-columns: repeat(2, 1fr); }
+  .profiles-grid{ grid-template-columns: repeat(2, 1fr); }
+  .contact-cards{ grid-template-columns: repeat(2, 1fr); }
+  .contact-location-bar{ border-radius: var(--radius-sm); }
+  .resume-box{ grid-template-columns: 1fr; text-align:center; }
+  .resume-box .resume-preview{ margin: 0 auto; max-width: 180px; }
+  .footer-inner{ grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px){
+  .nav-links{
+    position: fixed; top: var(--nav-h); left:0; right:0;
+    background: var(--panel); border-bottom: 1px solid var(--line);
+    flex-direction: column; padding: 1.2rem 1.5rem; gap: 1rem;
+    transform: translateY(-110%); transition: transform 0.3s ease;
+  }
+  .nav-links.open{ transform: translateY(0); }
+  .nav-burger{ display:flex; }
+  .footer-inner{ grid-template-columns: 1fr; }
+  .footer-bottom{ flex-direction: column; text-align:center; }
+}
+
+@media (max-width: 620px){
+  .skills-grid{ grid-template-columns: 1fr; }
+  .experience-grid{ grid-template-columns: 1fr; }
+  .cert-grid, .achieve-grid, .services-grid{ grid-template-columns: 1fr; }
+  .profiles-grid{ grid-template-columns: 1fr; }
+  .about-facts{ grid-template-columns: 1fr; }
+  .section{ padding: 5rem 1.2rem; }
+  .signal-strip{ flex-wrap: wrap; justify-content:center; }
+  .project-image{ height: 180px; }
+  .contact-cards{ grid-template-columns: 1fr; }
+}
